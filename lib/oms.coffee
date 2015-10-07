@@ -65,7 +65,7 @@ class @['OverlappingMarkerSpiderfier']
   p['addMarker'] = (marker) ->
     return @ if marker['_oms']?
     marker['_oms'] = yes
-    listenerRefs = [ge.addListener(marker, 'click', (event) => @spiderListener(marker, event))]
+    listenerRefs = [ge.addListener(marker, 'mouseover', (event) => @spiderListener(marker, event))]
     unless @['markersWontHide']
       listenerRefs.push(ge.addListener(marker, 'visible_changed', => @markerChangeListener(marker, no)))
     unless @['markersWontMove']
